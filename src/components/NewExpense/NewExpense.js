@@ -3,11 +3,17 @@ import ExpenseForm from "./ExpenseForm";
 import './NewExpense.css';
 
 
-function NewExpense(){
+function NewExpense(props){
+
+    const AddHandler = (detail) => {
+        
+       props.addItem(detail);
+        
+    }
 
 
     return (<div className="new-expense">
-        <ExpenseForm />
+        <ExpenseForm AddDetail={AddHandler} />
     </div>);
 }
 

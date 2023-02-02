@@ -20,8 +20,9 @@ const items = [
     {
       id: 'e4',
       date: new Date(2021,5,12),
-      amount: 450,
-      title: 'New Desk (Wooden)'
+      title: 'New Desk (Wooden)',
+      amount: 450
+     
     }
   ];
 
