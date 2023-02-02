@@ -19,13 +19,21 @@ function App() {
     console.log(expenses);
    
   }
+  const [yearExpense,setYearExpense] = useState(dummyItems);
+  const showYearly = selectedYear => {
+    const YearlyExpense = expenses.filter(expense => {
+      return (expense.date.getFullYear() == selectedYear);
+    });
+
+    setYearExpense(YearlyExpense);
+  }
 
   return (
     <div>    
       <NewExpense addItem={AddHandler} />   
       <div className="expenses">
-      <ExpensesFilter />
-      {expenses.map( (curr) => {
+      <ExpensesFilter currYear={showYearly} />
+      {yearExpense.map( (curr) => {
        return (<Expenses title={curr.title} date={curr.date} amount={curr.amount} />);
         })}
       </div>
