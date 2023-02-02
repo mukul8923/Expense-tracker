@@ -22,7 +22,7 @@ function App() {
   const [yearExpense,setYearExpense] = useState(dummyItems);
   const showYearly = selectedYear => {
     const YearlyExpense = expenses.filter(expense => {
-      return (expense.date.getFullYear() == selectedYear);
+      return (expense.date.getFullYear().toString() === selectedYear);
     });
 
     setYearExpense(YearlyExpense);
