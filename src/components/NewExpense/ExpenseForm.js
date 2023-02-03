@@ -52,6 +52,7 @@ const ExpenseForm = (props) => {
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
+    props.shrinkHandle();
   };
 
   return (
@@ -87,6 +88,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
+      <button onClick={props.shrinkHandle}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>

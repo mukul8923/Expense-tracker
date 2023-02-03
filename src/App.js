@@ -1,9 +1,9 @@
 import React , {useState} from "react";
 import dummyItems from './components/items';
-import Expenses from './components/Expenses/Expenses';
 import './components/Expenses.css';
 import NewExpense from "./components/NewExpense/NewExpense";
 import ExpensesFilter from "./components/ExpensesFilter/ExpensesFilter.js";
+import YearlyExpense from "./components/YearlyExpenses/YearlyExpense";
 
 
 function App() {
@@ -33,9 +33,8 @@ function App() {
       <NewExpense addItem={AddHandler} />   
       <div className="expenses">
       <ExpensesFilter currYear={showYearly} />
-      {yearExpense.map( (curr) => {
-       return (<Expenses title={curr.title} date={curr.date} amount={curr.amount} />);
-        })}
+      <YearlyExpense yearExpenses={yearExpense} />
+      
       </div>
     
       
