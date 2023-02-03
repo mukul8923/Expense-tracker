@@ -4,6 +4,7 @@ import './components/Expenses.css';
 import NewExpense from "./components/NewExpense/NewExpense";
 import ExpensesFilter from "./components/ExpensesFilter/ExpensesFilter.js";
 import YearlyExpense from "./components/YearlyExpenses/YearlyExpense";
+import ExpensesChart from "./components/Expenses/ExpensesChart";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <NewExpense addItem={AddHandler} />   
       <div className="expenses">
       <ExpensesFilter currYear={showYearly} />
+      <ExpensesChart expense={yearExpense} />
       <YearlyExpense yearExpenses={yearExpense} />
       
       </div>
